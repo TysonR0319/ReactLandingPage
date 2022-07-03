@@ -1,22 +1,24 @@
 import React from "react";
 import {Navbar} from "./navbar.jsx"
-//include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
-
+import { Jumbotron } from "./jumbotron.jsx";
+import { Cards } from "./cards.jsx";
+import { Footer } from "./footer.jsx";
+import css from "/workspace/react-hello/src/styles/index.css"
 //create your first component
 const Home = () => {
 	return (
-		<div className="text-center">
+		<div className="text-center vh-100">
 			<Navbar />
-			<p>
-				<img src={rigoImage} />
-			</p>
-			
-			<p>
-				Made by{" "}
-				<a href="http://www.4geeksacademy.com">4Geeks Academy</a>, with
-				love!
-			</p>
+			<Jumbotron />
+			<div id="cards" className="container p-0">
+				<div className="row d-flex flex-column align-items-center flex-md-row">
+					<Cards />
+					<Cards />
+					<Cards />
+					<Cards />
+				</div>
+			</div>
+			<Footer />
 		</div>
 	);
 };
